@@ -1,5 +1,9 @@
-typescriptimport FireSafetyProspectsApp from '../components/FireTestingApp';
+import FireTestingApp from '@/components/FireTestingApp'
 
 export default function HomePage() {
-  return <FireSafetyProspectsApp />;
+  return (
+    <main className="min-h-screen bg-gray-50">
+      <FireTestingApp />
+    </main>
+  )
 }
