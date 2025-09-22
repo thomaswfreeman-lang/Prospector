@@ -1,15 +1,22 @@
-import './globals.css';
-import React from "react";
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
 
-export const metadata = {
-  title: "Prospector",
-  description: "Fire safety prospects tool"
-};
+const inter = Inter({ subsets: ['latin'] })
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export const metadata: Metadata = {
+  title: 'Fire Testing New Prospects',
+  description: 'Fire safety prospect management system',
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
-  );
+  )
 }
