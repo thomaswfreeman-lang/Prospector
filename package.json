@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prebuild": "node scripts/env-check.mjs"
   },
   "dependencies": {
     "ioredis": "^5.3.2",

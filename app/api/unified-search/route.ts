@@ -1,4 +1,30 @@
-import { NextRequest, NextResponse } from 'next/server';
+export const runtime = 'node';
+import { NextResponse, NextRequest } from 'next/server';
+
+export async function GET(req: NextRequest) {
+  const q = req.nextUrl.searchParams.get('q') ?? '';
+  return POST(new Request(req.url, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ q }),
+  }));
+}
+
+export async function POST(req: NextRequest) {
+  const { q = '' } = await req.json().catch(() => ({ q: '' }));
+  return NextResponse.json({ success: true, echo: q });
+}
+
+
+/** Your existing POST handler should already exist. If it doesn’t, keep this shape: */
+export async function POST(req: Request) {
+  // ... your existing logic that returns the JSON you saw from your PowerShell POST test
+  // e.g. read { q } from req.json(), call your unified search, return NextResponse.json(...)
+  const { q = '' } = await req.json().catch(() => ({ q: '' }));
+  // return NextResponse.json(await runUnified(q));
+  // (leave your actual implementation here)
+  return NextResponse.json({ success: true, prospects: [], sources: [], totalAPIs: 0, successfulAPIs: 0, errors: [] });
+}
 
 interface Prospect {
   id: string;
