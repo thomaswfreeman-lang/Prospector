@@ -1,9 +1,9 @@
-import FireTestingAppLite from '@/components/FireTestingApp.LITE'
+import FireTestingApp from '@/components/FireTestingApp'
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-gray-50">
-      <FireTestingAppLite />
+      <FireTestingApp />
     </main>
   )
 }
