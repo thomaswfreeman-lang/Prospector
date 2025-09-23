@@ -1,4 +1,11 @@
-node_modules/ 
-.next/ 
-.env.local 
-*.log 
+﻿.next/
+.vercel/output/
+dist/
+coverage/
+.cache/
+.turbo/
+.swc/
+node_modules/
+.pnpm-store/
+*.log
+*.tsbuildinfo
