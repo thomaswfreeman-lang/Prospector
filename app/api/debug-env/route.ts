@@ -1,5 +1,5 @@
-﻿import { NextResponse } from 'next/server';
-export const runtime = 'node';
+import { NextResponse } from 'next/server';
+export const runtime = 'nodejs';
 export async function GET() {
   return NextResponse.json({
     node: process.version,

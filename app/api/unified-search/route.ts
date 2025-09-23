@@ -1,4 +1,4 @@
-export const runtime = 'node';
+export const runtime = 'nodejs';
 import { NextResponse, NextRequest } from 'next/server';
 
 export async function GET(req: NextRequest) {

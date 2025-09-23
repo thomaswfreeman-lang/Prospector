@@ -1,4 +1,4 @@
-﻿const env = process.env.VERCEL_ENV || process.env.NODE_ENV || "development";
+const env = process.env.VERCEL_ENV || process.env.NODE_ENV || "development";
 
 // Required now
 const required = ["OPENAI_API_KEY", "SERPAPI_API_KEY"];
@@ -14,17 +14,17 @@ const missingRequired = required.filter(k => !process.env[k]);
 const missingOptional = optional.filter(k => !process.env[k]);
 
 if (missingRequired.length) {
-  console.error("❌ Missing required env vars:", missingRequired.join(", "));
+  console.error("? Missing required env vars:", missingRequired.join(", "));
   process.exit(1);
 }
 
 if (env === "production" && missingOptional.length) {
-  console.error("❌ Missing optional env vars in production:", missingOptional.join(", "));
+  console.error("? Missing optional env vars in production:", missingOptional.join(", "));
   process.exit(1);
 }
 
 if (missingOptional.length) {
-  console.warn("⚠️  Optional env vars missing (non-prod):", missingOptional.join(", "));
+  console.warn("??  Optional env vars missing (non-prod):", missingOptional.join(", "));
 } else {
-  console.log("✅ Env check passed.");
+  console.log("? Env check passed.");
 }
